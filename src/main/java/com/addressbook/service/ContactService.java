@@ -580,6 +580,45 @@ public class ContactService {
 
         return "All contacts added using multithreading";
     }
+    
+ // UC23 : add contacts with performance measurement
+    public String addContactsWithPerformance(List<Contact> newContacts) {
+
+        long startTime = System.currentTimeMillis();
+
+        List<Thread> threads = new ArrayList<>();
+
+        for (Contact contact : newContacts) {
+
+            Thread thread = new Thread(() -> {
+
+                synchronized (this) {
+                    contacts.add(contact);
+                    System.out.println("Added contact: " + contact.getFirstName());
+                }
+
+            });
+
+            threads.add(thread);
+            thread.start();
+        }
+
+        // wait for all threads to complete
+        for (Thread thread : threads) {
+
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        long endTime = System.currentTimeMillis();
+
+        long duration = endTime - startTime;
+
+        return "Contacts added in " + duration + " ms using multithreading";
+    }
  
     
 }

@@ -198,4 +198,11 @@ public class ContactController {
 
         return contactService.addMultipleContacts(contacts);
     }
+    
+ // UC23 : performance measurement
+    @PostMapping("/multi/performance")
+    public String addContactsWithPerformance(@RequestBody List<Contact> contacts) {
+
+        return contactService.addContactsWithPerformance(contacts);
+    }
 }
