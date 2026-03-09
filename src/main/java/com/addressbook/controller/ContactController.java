@@ -121,4 +121,11 @@ public class ContactController {
 
         return contactService.sortContactsByZip();
     }
+    
+ // UC12 : write contacts to file
+    @GetMapping("/write")
+    public String writeContactsToFile() {
+
+        return contactService.writeContactsToFile();
+    }
 }

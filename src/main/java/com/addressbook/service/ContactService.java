@@ -3,6 +3,8 @@ package com.addressbook.service;
 import com.addressbook.model.Contact;
 import org.springframework.stereotype.Service;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 @Service
@@ -210,6 +212,35 @@ public class ContactService {
         sortedContacts.sort(Comparator.comparing(Contact::getZip));
 
         return sortedContacts;
+    }
+    
+ // UC12 : write contacts to file
+    public String writeContactsToFile() {
+
+        String fileName = "contacts.txt";
+
+        try {
+
+            FileWriter writer = new FileWriter(fileName);
+
+            for (Contact contact : contacts) {
+
+                writer.write(
+                        contact.getFirstName() + "," +
+                        contact.getLastName() + "," +
+                        contact.getCity() + "," +
+                        contact.getState() + "\n"
+                );
+            }
+
+            writer.close();
+
+            return "Contacts successfully written to file";
+
+        } catch (IOException e) {
+
+            return "Error writing contacts to file";
+        }
     }
     
 }
