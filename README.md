@@ -1,3 +1,32 @@
+# Address Book – UC17
+
+## Description
+
+UC17 implements the functionality to **read contacts from a JSON file and load them into the Address Book**.
+This use case enables the application to retrieve previously stored contact data from a JSON file and restore it into the system.
+
+The system reads the JSON file, converts the stored data into contact objects, and adds them to the address book.
+
+## API Endpoint
+
+**GET /contacts/read/json**
+Reads contacts from the JSON file and loads them into the address book.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the logic to read and parse contact data from a JSON file.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint for triggering the JSON file read operation.
+
+## Status
+
+UC17 implemented successfully.
+
+
 # Address Book – UC16
 
 ## Description
