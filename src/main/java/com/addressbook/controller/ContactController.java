@@ -191,4 +191,11 @@ public class ContactController {
 
         return contactService.deleteContactFromDatabase(firstName);
     }
+    
+ // UC22 : add multiple contacts
+    @PostMapping("/multi")
+    public String addMultipleContacts(@RequestBody List<Contact> contacts) {
+
+        return contactService.addMultipleContacts(contacts);
+    }
 }

@@ -547,6 +547,39 @@ public class ContactService {
             return "Error deleting contact from database";
         }
     }
+    
+ // UC22 : add multiple contacts using threads
+    public String addMultipleContacts(List<Contact> newContacts) {
+
+        List<Thread> threads = new ArrayList<>();
+
+        for (Contact contact : newContacts) {
+
+            Thread thread = new Thread(() -> {
+
+                synchronized (this) {
+                    contacts.add(contact);
+                    System.out.println("Added contact: " + contact.getFirstName());
+                }
+
+            });
+
+            threads.add(thread);
+            thread.start();
+        }
+
+        // wait for all threads
+        for (Thread thread : threads) {
+
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return "All contacts added using multithreading";
+    }
  
     
 }
