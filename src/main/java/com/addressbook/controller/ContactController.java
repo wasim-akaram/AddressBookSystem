@@ -32,4 +32,9 @@ public class ContactController {
 
         return contactService.updateContact(firstName, contact);
     }
+    
+    @DeleteMapping("/{firstName}")
+    public String deleteContact(@PathVariable String firstName) {
+        return contactService.deleteContact(firstName);
+    }
 }

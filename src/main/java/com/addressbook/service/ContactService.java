@@ -39,4 +39,17 @@ public class ContactService {
 
         return "Contact not found";
     }
+    
+    public String deleteContact(String firstName) {
+
+        for (Contact contact : contacts) {
+
+            if (contact.getFirstName().equalsIgnoreCase(firstName)) {
+                contacts.remove(contact);
+                return "Contact deleted successfully";
+            }
+        }
+
+        return "Contact not found";
+    }
 }
