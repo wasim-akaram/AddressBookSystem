@@ -1,3 +1,39 @@
+# Address Book – UC5
+
+## Description
+
+UC5 implements the functionality to **store and manage multiple contacts in the Address Book**.
+This use case allows the system to handle multiple persons by storing contact details in a collection.
+
+Each contact added through the API is stored in an in-memory list, allowing the address book to maintain and retrieve multiple contacts.
+
+## API Endpoints
+
+**POST /contacts**
+Adds a new contact to the address book.
+
+**GET /contacts**
+Retrieves the list of all contacts stored in the address book.
+
+## Components Involved
+
+**Model**
+
+* `Contact` – Defines the structure of contact information.
+
+**Service**
+
+* `ContactService` – Manages the list of contacts and handles the logic for adding and retrieving multiple contacts.
+
+**Controller**
+
+* `ContactController` – Provides REST API endpoints for adding and viewing contacts.
+
+## Status
+
+UC5 implemented successfully.
+
+
 # Address Book – UC4
 
 ## Description
