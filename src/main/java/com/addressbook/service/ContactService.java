@@ -1,10 +1,14 @@
 package com.addressbook.service;
 
 import com.addressbook.model.Contact;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
@@ -348,5 +352,24 @@ public class ContactService {
             return "Error reading contacts from CSV file";
         }
     }
+ // UC16 : write contacts to JSON
+    public String writeContactsToJSON() {
+
+        String fileName = "contacts.json";
+
+        try {
+
+            ObjectMapper objectMapper = new ObjectMapper();
+
+            objectMapper.writeValue(new File(fileName), contacts);
+
+            return "Contacts successfully written to JSON file";
+
+        } catch (IOException e) {
+
+            return "Error writing contacts to JSON file";
+        }
+    }
+ 
     
 }

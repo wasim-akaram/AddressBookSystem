@@ -148,4 +148,11 @@ public class ContactController {
 
         return contactService.readContactsFromCSV();
     }
+    
+ // UC16 : write contacts to JSON
+    @GetMapping("/write/json")
+    public String writeContactsToJSON() {
+
+        return contactService.writeContactsToJSON();
+    }
 }
