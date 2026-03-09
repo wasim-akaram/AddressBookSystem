@@ -1,3 +1,32 @@
+# Address Book – UC12
+
+## Description
+
+UC12 implements the functionality to **write Address Book contacts to a file**.
+This use case enables the application to store contact information in a file, allowing the data to be saved outside the application's memory.
+
+The system processes the list of stored contacts and writes their details into a text file.
+
+## API Endpoint
+
+**GET /contacts/write**
+Writes all contacts from the address book into a file.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the logic to write contact data to a file.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint for triggering the file write operation.
+
+## Status
+
+UC12 implemented successfully.
+
+
 # Address Book – UC11
 
 ## Description
