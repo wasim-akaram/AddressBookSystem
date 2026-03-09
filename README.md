@@ -1,3 +1,32 @@
+# Address Book – UC23
+
+## Description
+
+UC23 implements the functionality to **measure the performance of adding multiple contacts using multithreading**.
+This use case evaluates how concurrent processing affects the time taken to add multiple contacts to the Address Book.
+
+The system records the start and end time of the operation and calculates the total duration required to add all contacts using threads.
+
+## API Endpoint
+
+**POST /contacts/multi/performance**
+Adds multiple contacts using multithreading and returns the time taken to complete the operation.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the logic for creating threads and measuring the execution time of concurrent contact additions.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint for triggering the multithreaded operation and returning the performance result.
+
+## Status
+
+UC23 implemented successfully.
+
+
 # Address Book – UC22
 
 ## Description
