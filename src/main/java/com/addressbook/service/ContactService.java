@@ -22,7 +22,8 @@ import java.util.*;
 public class ContactService {
 
     // UC2–UC5 : store contacts
-    private List<Contact> contacts = new ArrayList<>();
+    //private List<Contact> contacts = new ArrayList<>();
+	private List<Contact> contacts = Collections.synchronizedList(new ArrayList<>());
 
     // UC6 : multiple address books
     private Map<String, List<Contact>> addressBooks = new HashMap<>();
@@ -618,6 +619,37 @@ public class ContactService {
         long duration = endTime - startTime;
 
         return "Contacts added in " + duration + " ms using multithreading";
+    }
+    
+ // UC24 : thread-safe addition of contacts
+    public String addContactsThreadSafe(List<Contact> newContacts) {
+
+        List<Thread> threads = new ArrayList<>();
+
+        for (Contact contact : newContacts) {
+
+            Thread thread = new Thread(() -> {
+
+                contacts.add(contact);
+
+                System.out.println("Thread-safe add: " + contact.getFirstName());
+
+            });
+
+            threads.add(thread);
+            thread.start();
+        }
+
+        for (Thread thread : threads) {
+
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return "Contacts added safely using synchronized list";
     }
  
     

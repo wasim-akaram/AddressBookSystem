@@ -205,4 +205,11 @@ public class ContactController {
 
         return contactService.addContactsWithPerformance(contacts);
     }
+    
+ // UC24 : thread-safe API
+    @PostMapping("/multi/threadsafe")
+    public String addContactsThreadSafe(@RequestBody List<Contact> contacts) {
+
+        return contactService.addContactsThreadSafe(contacts);
+    }
 }
