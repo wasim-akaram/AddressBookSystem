@@ -1,3 +1,32 @@
+# Address Book – UC18
+
+## Description
+
+UC18 implements the functionality to **store Address Book contacts in a database using JDBC**.
+This use case introduces database persistence, allowing contact information to be saved in a relational database instead of only being stored in memory or files.
+
+The system establishes a connection to the database and inserts contact records into the contacts table.
+
+## API Endpoint
+
+**POST /contacts/db**
+Saves a contact to the database.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the JDBC logic to insert contact data into the database.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint for storing contacts in the database.
+
+## Status
+
+UC18 implemented successfully.
+
+
 # Address Book – UC17
 
 ## Description
