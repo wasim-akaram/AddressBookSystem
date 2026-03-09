@@ -11,6 +11,9 @@ import java.io.FileReader;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.util.*;
 
 @Service
@@ -390,6 +393,40 @@ public class ContactService {
         } catch (IOException e) {
 
             return "Error reading contacts from JSON file";
+        }
+    }
+    
+ // UC18 : save contact to database
+    public String saveContactToDatabase(Contact contact) {
+
+        String url = "jdbc:mysql://localhost:3306/addressbook_db";
+        String user = "root";
+        String password = "yourpassword";
+
+        try {
+
+            Connection connection =
+                    DriverManager.getConnection(url, user, password);
+
+            String sql =
+                    "INSERT INTO contacts(first_name, last_name, city, state) VALUES (?, ?, ?, ?)";
+
+            PreparedStatement statement = connection.prepareStatement(sql);
+
+            statement.setString(1, contact.getFirstName());
+            statement.setString(2, contact.getLastName());
+            statement.setString(3, contact.getCity());
+            statement.setString(4, contact.getState());
+
+            statement.executeUpdate();
+
+            connection.close();
+
+            return "Contact saved to database successfully";
+
+        } catch (Exception e) {
+
+            return "Error saving contact to database";
         }
     }
  

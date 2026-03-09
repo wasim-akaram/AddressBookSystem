@@ -40,6 +40,12 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		
+		<!--dependency of sql-->
+		<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+</dependency>
 
 		<!-- Lombok (Optional but useful) -->
 		<dependency>

@@ -162,4 +162,11 @@ public class ContactController {
 
         return contactService.readContactsFromJSON();
     }
+    
+ // UC18 : save contact to database
+    @PostMapping("/db")
+    public String saveContactToDatabase(@RequestBody Contact contact) {
+
+        return contactService.saveContactToDatabase(contact);
+    }
 }
