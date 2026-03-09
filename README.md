@@ -1,3 +1,43 @@
+# Address Book – UC3
+
+## Description
+
+UC3 implements the functionality to **edit or update an existing contact in the Address Book**.
+This use case allows users to modify previously stored contact information such as address, city, state, zip code, phone number, or email.
+
+The system searches for a contact using the **first name** and updates the corresponding fields with the new information provided. If the contact exists, the details are updated successfully; otherwise, the system returns a message indicating that the contact was not found.
+
+## API Endpoints
+
+**PUT /contacts/{firstName}**
+Updates the details of an existing contact in the address book.
+
+**GET /contacts**
+Retrieves the list of all contacts stored in the address book.
+
+## Components Involved
+
+**Model**
+
+* `Contact` – Defines the structure of contact information.
+
+**Service**
+
+* `ContactService` – Contains the logic to search and update an existing contact.
+
+**Controller**
+
+* `ContactController` – Exposes the REST API endpoint for updating contact details.
+
+## Status
+
+UC3 implemented successfully.
+---
+
+
+
+
+
 # Address Book – UC2
 
 ## Description
