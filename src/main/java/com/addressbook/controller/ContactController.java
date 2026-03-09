@@ -98,4 +98,27 @@ public class ContactController {
 
         return contactService.sortContactsByName();
     }
+    
+ // UC11 : sort contacts by city
+    @GetMapping("/sorted/city")
+    public List<Contact> sortContactsByCity() {
+
+        return contactService.sortContactsByCity();
+    }
+
+
+    // UC11 : sort contacts by state
+    @GetMapping("/sorted/state")
+    public List<Contact> sortContactsByState() {
+
+        return contactService.sortContactsByState();
+    }
+
+
+    // UC11 : sort contacts by zip
+    @GetMapping("/sorted/zip")
+    public List<Contact> sortContactsByZip() {
+
+        return contactService.sortContactsByZip();
+    }
 }

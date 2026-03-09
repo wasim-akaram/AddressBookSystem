@@ -180,4 +180,36 @@ public class ContactService {
         return sortedContacts;
     }
     
+ // UC11 : sort contacts by city
+    public List<Contact> sortContactsByCity() {
+
+        List<Contact> sortedContacts = new ArrayList<>(contacts);
+
+        sortedContacts.sort(Comparator.comparing(Contact::getCity));
+
+        return sortedContacts;
+    }
+
+
+    // UC11 : sort contacts by state
+    public List<Contact> sortContactsByState() {
+
+        List<Contact> sortedContacts = new ArrayList<>(contacts);
+
+        sortedContacts.sort(Comparator.comparing(Contact::getState));
+
+        return sortedContacts;
+    }
+
+
+    // UC11 : sort contacts by zip
+    public List<Contact> sortContactsByZip() {
+
+        List<Contact> sortedContacts = new ArrayList<>(contacts);
+
+        sortedContacts.sort(Comparator.comparing(Contact::getZip));
+
+        return sortedContacts;
+    }
+    
 }
