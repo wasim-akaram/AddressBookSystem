@@ -473,6 +473,45 @@ public class ContactService {
 
         return dbContacts;
     }
+    
+ // UC20 : update contact in database
+    public String updateContactInDatabase(String firstName, Contact updatedContact) {
+
+        String url = "jdbc:mysql://localhost:3306/addressbook_db";
+        String user = "root";
+        String password = "yourpassword";
+
+        try {
+
+            Connection connection =
+                    DriverManager.getConnection(url, user, password);
+
+            String sql =
+                    "UPDATE contacts SET last_name=?, city=?, state=? WHERE first_name=?";
+
+            PreparedStatement statement =
+                    connection.prepareStatement(sql);
+
+            statement.setString(1, updatedContact.getLastName());
+            statement.setString(2, updatedContact.getCity());
+            statement.setString(3, updatedContact.getState());
+            statement.setString(4, firstName);
+
+            int rowsUpdated = statement.executeUpdate();
+
+            connection.close();
+
+            if (rowsUpdated > 0) {
+                return "Contact updated successfully in database";
+            } else {
+                return "Contact not found in database";
+            }
+
+        } catch (Exception e) {
+
+            return "Error updating contact in database";
+        }
+    }
  
     
 }

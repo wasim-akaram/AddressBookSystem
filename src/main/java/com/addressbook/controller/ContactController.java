@@ -176,4 +176,12 @@ public class ContactController {
 
         return contactService.getContactsFromDatabase();
     }
+    
+ // UC20 : update contact in database
+    @PutMapping("/db/{firstName}")
+    public String updateContactInDatabase(@PathVariable String firstName,
+                                          @RequestBody Contact contact) {
+
+        return contactService.updateContactInDatabase(firstName, contact);
+    }
 }
