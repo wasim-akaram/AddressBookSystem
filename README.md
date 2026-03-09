@@ -1,3 +1,39 @@
+# Address Book – UC4
+
+## Description
+
+UC4 implements the functionality to **delete an existing contact from the Address Book**.
+This use case allows users to remove a contact from the system when it is no longer needed.
+
+The application searches for a contact using the **first name**. If the contact exists in the address book, it is removed from the stored contact list. If the contact does not exist, the system returns a message indicating that the contact was not found.
+
+## API Endpoints
+
+**DELETE /contacts/{firstName}**
+Deletes an existing contact from the address book.
+
+**GET /contacts**
+Retrieves all contacts stored in the address book.
+
+## Components Involved
+
+**Model**
+
+* `Contact` – Defines the structure of contact information.
+
+**Service**
+
+* `ContactService` – Contains the logic to locate and remove a contact from the list.
+
+**Controller**
+
+* `ContactController` – Exposes the REST API endpoint for deleting contacts.
+
+## Status
+
+UC4 implemented successfully.
+
+
 # Address Book – UC3
 
 ## Description
