@@ -1,3 +1,41 @@
+# Address Book – UC7
+
+## Description
+
+UC7 implements the functionality to **prevent duplicate contacts from being added to the Address Book**.
+Before adding a new contact, the system checks whether a contact with the same **first name already exists**.
+
+If a duplicate contact is found, the system prevents the addition and returns an appropriate message. This validation ensures that the address book maintains unique contact entries and avoids storing repeated information.
+
+Duplicate validation is applied both when adding contacts to the **main contact list** and when adding contacts to a **specific address book**.
+
+## API Endpoints
+
+**POST /contacts**
+Adds a new contact to the address book after checking for duplicates.
+
+**POST /contacts/addressbook/{bookName}**
+Adds a new contact to a specific address book after validating that the contact does not already exist.
+
+## Components Involved
+
+**Model**
+
+* `Contact` – Represents the contact data structure.
+
+**Service**
+
+* `ContactService` – Contains the logic to detect duplicate contacts before storing them.
+
+**Controller**
+
+* `ContactController` – Provides REST API endpoints for adding contacts.
+
+## Status
+
+UC7 implemented successfully.
+
+
 # Address Book – UC6
 
 ## Description
