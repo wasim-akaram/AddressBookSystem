@@ -184,4 +184,11 @@ public class ContactController {
 
         return contactService.updateContactInDatabase(firstName, contact);
     }
+    
+ // UC21 : delete contact from database
+    @DeleteMapping("/db/{firstName}")
+    public String deleteContactFromDatabase(@PathVariable String firstName) {
+
+        return contactService.deleteContactFromDatabase(firstName);
+    }
 }

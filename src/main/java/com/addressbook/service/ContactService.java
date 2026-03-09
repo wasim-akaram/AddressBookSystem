@@ -512,6 +512,41 @@ public class ContactService {
             return "Error updating contact in database";
         }
     }
+    
+ // UC21 : delete contact from database
+    public String deleteContactFromDatabase(String firstName) {
+
+        String url = "jdbc:mysql://localhost:3306/addressbook_db";
+        String user = "root";
+        String password = "yourpassword";
+
+        try {
+
+            Connection connection =
+                    DriverManager.getConnection(url, user, password);
+
+            String sql = "DELETE FROM contacts WHERE first_name=?";
+
+            PreparedStatement statement =
+                    connection.prepareStatement(sql);
+
+            statement.setString(1, firstName);
+
+            int rowsDeleted = statement.executeUpdate();
+
+            connection.close();
+
+            if (rowsDeleted > 0) {
+                return "Contact deleted successfully from database";
+            } else {
+                return "Contact not found in database";
+            }
+
+        } catch (Exception e) {
+
+            return "Error deleting contact from database";
+        }
+    }
  
     
 }
