@@ -141,4 +141,11 @@ public class ContactController {
 
         return contactService.writeContactsToCSV();
     }
+    
+ // UC15 : read contacts from CSV
+    @GetMapping("/read/csv")
+    public String readContactsFromCSV() {
+
+        return contactService.readContactsFromCSV();
+    }
 }

@@ -312,4 +312,41 @@ public class ContactService {
         }
     }
     
+ // UC15 : read contacts from CSV
+    public String readContactsFromCSV() {
+
+        String fileName = "contacts.csv";
+
+        try {
+
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            String line;
+
+            // skip header
+            reader.readLine();
+
+            while ((line = reader.readLine()) != null) {
+
+                String[] data = line.split(",");
+
+                Contact contact = new Contact();
+
+                contact.setFirstName(data[0]);
+                contact.setLastName(data[1]);
+                contact.setCity(data[2]);
+                contact.setState(data[3]);
+
+                contacts.add(contact);
+            }
+
+            reader.close();
+
+            return "Contacts successfully loaded from CSV file";
+
+        } catch (IOException e) {
+
+            return "Error reading contacts from CSV file";
+        }
+    }
+    
 }
