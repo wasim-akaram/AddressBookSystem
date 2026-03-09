@@ -91,4 +91,11 @@ public class ContactController {
 
         return contactService.countByState(state);
     }
+    
+ // UC10 : get contacts sorted by name
+    @GetMapping("/sorted/name")
+    public List<Contact> sortContactsByName() {
+
+        return contactService.sortContactsByName();
+    }
 }

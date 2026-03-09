@@ -170,4 +170,14 @@ public class ContactService {
         return count;
     }
     
+ // UC10 : sort contacts by name
+    public List<Contact> sortContactsByName() {
+
+        List<Contact> sortedContacts = new ArrayList<>(contacts);
+
+        sortedContacts.sort(Comparator.comparing(Contact::getFirstName));
+
+        return sortedContacts;
+    }
+    
 }
