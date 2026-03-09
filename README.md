@@ -1,3 +1,32 @@
+# Address Book – UC20
+
+## Description
+
+UC20 implements the functionality to **update an existing contact in the database using JDBC**.
+This use case allows users to modify stored contact information such as last name, city, or state directly in the database.
+
+The system connects to the database, executes an update query on the contacts table, and updates the corresponding record if the contact exists.
+
+## API Endpoint
+
+**PUT /contacts/db/{firstName}**
+Updates the details of a contact stored in the database.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the JDBC logic to update contact data in the database.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint for updating contacts in the database.
+
+## Status
+
+UC20 implemented successfully.
+
+
 # Address Book – UC19
 
 ## Description
