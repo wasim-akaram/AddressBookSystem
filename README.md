@@ -1,3 +1,38 @@
+# Address Book – UC11
+
+## Description
+
+UC11 implements the functionality to **sort contacts in the Address Book based on City, State, or Zip code**.
+This use case allows users to retrieve contacts in an organized order depending on the selected field.
+
+The system processes the stored contacts and returns them sorted according to the specified attribute.
+
+## API Endpoints
+
+**GET /contacts/sorted/city**
+Returns contacts sorted by city.
+
+**GET /contacts/sorted/state**
+Returns contacts sorted by state.
+
+**GET /contacts/sorted/zip**
+Returns contacts sorted by zip code.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the logic to sort contacts by city, state, or zip.
+
+**Controller**
+
+* `ContactController` – Provides REST API endpoints for retrieving sorted contact lists.
+
+## Status
+
+UC11 implemented successfully.
+
+
 # Address Book – UC10
 
 ## Description
