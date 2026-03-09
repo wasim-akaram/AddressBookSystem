@@ -128,4 +128,10 @@ public class ContactController {
 
         return contactService.writeContactsToFile();
     }
+ // UC13 : read contacts from file
+    @GetMapping("/read")
+    public String readContactsFromFile() {
+
+        return contactService.readContactsFromFile();
+    }
 }

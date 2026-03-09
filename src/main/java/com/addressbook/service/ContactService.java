@@ -3,6 +3,8 @@ package com.addressbook.service;
 import com.addressbook.model.Contact;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
@@ -240,6 +242,39 @@ public class ContactService {
         } catch (IOException e) {
 
             return "Error writing contacts to file";
+        }
+    }
+    
+ // UC13 : read contacts from file
+    public String readContactsFromFile() {
+
+        String fileName = "contacts.txt";
+
+        try {
+
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+
+                String[] data = line.split(",");
+
+                Contact contact = new Contact();
+                contact.setFirstName(data[0]);
+                contact.setLastName(data[1]);
+                contact.setCity(data[2]);
+                contact.setState(data[3]);
+
+                contacts.add(contact);
+            }
+
+            reader.close();
+
+            return "Contacts loaded successfully from file";
+
+        } catch (IOException e) {
+
+            return "Error reading contacts from file";
         }
     }
     
