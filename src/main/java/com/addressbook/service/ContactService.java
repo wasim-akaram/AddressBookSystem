@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.*;
 
 @Service
@@ -428,6 +430,48 @@ public class ContactService {
 
             return "Error saving contact to database";
         }
+    }
+    
+ // UC19 : fetch contacts from database
+    public List<Contact> getContactsFromDatabase() {
+
+        String url = "jdbc:mysql://localhost:3306/addressbook_db";
+        String user = "root";
+        String password = "yourpassword";
+
+        List<Contact> dbContacts = new ArrayList<>();
+
+        try {
+
+            Connection connection =
+                    DriverManager.getConnection(url, user, password);
+
+            String sql = "SELECT * FROM contacts";
+
+            Statement statement = connection.createStatement();
+
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while (resultSet.next()) {
+
+                Contact contact = new Contact();
+
+                contact.setFirstName(resultSet.getString("first_name"));
+                contact.setLastName(resultSet.getString("last_name"));
+                contact.setCity(resultSet.getString("city"));
+                contact.setState(resultSet.getString("state"));
+
+                dbContacts.add(contact);
+            }
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
+        return dbContacts;
     }
  
     

@@ -169,4 +169,11 @@ public class ContactController {
 
         return contactService.saveContactToDatabase(contact);
     }
+    
+ // UC19 : fetch contacts from database
+    @GetMapping("/db")
+    public List<Contact> getContactsFromDatabase() {
+
+        return contactService.getContactsFromDatabase();
+    }
 }
