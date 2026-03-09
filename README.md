@@ -1,3 +1,33 @@
+# Address Book – UC19
+
+## Description
+
+UC19 implements the functionality to **retrieve contacts stored in the database using JDBC**.
+This use case allows the application to fetch contact records from the database and return them to the user.
+
+The system connects to the database, executes a query to retrieve contact information from the contacts table, converts the result into contact objects, and returns the list of contacts.
+
+## API Endpoint
+
+**GET /contacts/db**
+Retrieves all contacts stored in the database.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the JDBC logic to fetch contact data from the database.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint for retrieving contacts from the database.
+
+## Status
+
+UC19 implemented successfully.
+
+
+
 # Address Book – UC18
 
 ## Description
