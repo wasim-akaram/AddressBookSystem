@@ -1,3 +1,41 @@
+# Address Book – UC6
+
+## Description
+
+UC6 implements the functionality to **manage multiple Address Books within the application**.
+Instead of storing all contacts in a single list, the system now supports multiple address books, each identified by a unique name.
+
+Each address book can contain its own list of contacts. Users can add contacts to a specific address book and retrieve all contacts belonging to that address book.
+
+This feature improves organization by allowing contacts to be grouped into categories such as **home, office, or friends**.
+
+## API Endpoints
+
+**POST /contacts/addressbook/{bookName}**
+Adds a new contact to the specified address book.
+
+**GET /contacts/addressbook/{bookName}**
+Retrieves all contacts stored in the specified address book.
+
+## Components Involved
+
+**Model**
+
+* `Contact` – Defines the structure of contact information.
+
+**Service**
+
+* `ContactService` – Manages multiple address books and handles storing and retrieving contacts.
+
+**Controller**
+
+* `ContactController` – Provides REST API endpoints for interacting with contacts within specific address books.
+
+## Status
+
+UC6 implemented successfully.
+
+
 # Address Book – UC5
 
 ## Description
