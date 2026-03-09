@@ -404,7 +404,7 @@ public class ContactService {
 
         String url = "jdbc:mysql://localhost:3306/addressbook_db";
         String user = "root";
-        String password = "yourpassword";
+        String password = "Wasim123";
 
         try {
 
