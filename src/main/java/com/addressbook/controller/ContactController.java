@@ -76,4 +76,19 @@ public class ContactController {
 
         return contactService.searchByState(state);
     }
+    
+ // UC9 : count contacts by city
+    @GetMapping("/city/{city}/count")
+    public long countByCity(@PathVariable String city) {
+
+        return contactService.countByCity(city);
+    }
+
+
+    // UC9 : count contacts by state
+    @GetMapping("/state/{state}/count")
+    public long countByState(@PathVariable String state) {
+
+        return contactService.countByState(state);
+    }
 }

@@ -138,4 +138,36 @@ public class ContactService {
 
         return result;
     }
+    
+ // UC9 : count contacts by city
+    public long countByCity(String city) {
+
+        long count = 0;
+
+        for (Contact contact : contacts) {
+
+            if (contact.getCity().equalsIgnoreCase(city)) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+
+    // UC9 : count contacts by state
+    public long countByState(String state) {
+
+        long count = 0;
+
+        for (Contact contact : contacts) {
+
+            if (contact.getState().equalsIgnoreCase(state)) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+    
 }
