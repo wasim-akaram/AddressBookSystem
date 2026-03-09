@@ -25,4 +25,11 @@ public class ContactController {
     public List<Contact> getContacts() {
         return contactService.getAllContacts();
     }
+    
+    @PutMapping("/{firstName}")
+    public String updateContact(@PathVariable String firstName,
+                                @RequestBody Contact contact) {
+
+        return contactService.updateContact(firstName, contact);
+    }
 }
