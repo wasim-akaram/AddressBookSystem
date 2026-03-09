@@ -1,3 +1,39 @@
+# Address Book – UC8
+
+## Description
+
+UC8 implements the functionality to **search contacts in the Address Book based on City or State**.
+This use case allows users to filter and retrieve contacts by specifying a city or state value.
+
+The system scans the stored contacts and returns the list of contacts that match the given city or state. This feature helps users quickly locate contacts belonging to a specific location.
+
+## API Endpoints
+
+**GET /contacts/city/{city}**
+Retrieves all contacts that belong to the specified city.
+
+**GET /contacts/state/{state}**
+Retrieves all contacts that belong to the specified state.
+
+## Components Involved
+
+**Model**
+
+* `Contact` – Represents the structure of contact information.
+
+**Service**
+
+* `ContactService` – Contains the logic to filter contacts by city or state.
+
+**Controller**
+
+* `ContactController` – Provides REST API endpoints for searching contacts.
+
+## Status
+
+UC8 implemented successfully.
+
+
 # Address Book – UC7
 
 ## Description
