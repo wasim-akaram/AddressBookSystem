@@ -1,3 +1,39 @@
+# Address Book – UC9
+
+## Description
+
+UC9 implements the functionality to **view the count of contacts based on City or State** in the Address Book.
+This use case allows users to determine how many contacts belong to a particular city or state.
+
+The system scans the stored contacts and returns the **total number of contacts** that match the specified city or state. This feature helps users quickly understand the distribution of contacts across different locations.
+
+## API Endpoints
+
+**GET /contacts/city/{city}/count**
+Returns the number of contacts that belong to the specified city.
+
+**GET /contacts/state/{state}/count**
+Returns the number of contacts that belong to the specified state.
+
+## Components Involved
+
+**Model**
+
+* `Contact` – Represents the structure of contact information.
+
+**Service**
+
+* `ContactService` – Contains the logic to count contacts by city or state.
+
+**Controller**
+
+* `ContactController` – Provides REST API endpoints for retrieving contact counts.
+
+## Status
+
+UC9 implemented successfully.
+
+
 # Address Book – UC8
 
 ## Description
