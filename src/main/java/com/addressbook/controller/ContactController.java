@@ -212,4 +212,10 @@ public class ContactController {
 
         return contactService.addContactsThreadSafe(contacts);
     }
+ // UC25 : concurrent read/write API
+    @PostMapping("/multi/concurrent")
+    public String concurrentReadWrite(@RequestBody List<Contact> contacts) {
+
+        return contactService.concurrentReadWrite(contacts);
+    }
 }

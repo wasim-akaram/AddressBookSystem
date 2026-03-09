@@ -651,6 +651,42 @@ public class ContactService {
 
         return "Contacts added safely using synchronized list";
     }
+    
+ // UC25 : concurrent read and write operations
+    public String concurrentReadWrite(List<Contact> newContacts) {
+
+        List<Thread> threads = new ArrayList<>();
+
+        for (Contact contact : newContacts) {
+
+            Thread writerThread = new Thread(() -> {
+                contacts.add(contact);
+                System.out.println("Written: " + contact.getFirstName());
+            });
+
+            Thread readerThread = new Thread(() -> {
+                synchronized (contacts) {
+                    System.out.println("Current contacts count: " + contacts.size());
+                }
+            });
+
+            threads.add(writerThread);
+            threads.add(readerThread);
+
+            writerThread.start();
+            readerThread.start();
+        }
+
+        for (Thread thread : threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return "Concurrent read/write operations completed successfully";
+    }
  
     
 }
