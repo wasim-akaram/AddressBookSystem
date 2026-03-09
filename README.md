@@ -1,3 +1,32 @@
+# Address Book – UC15
+
+## Description
+
+UC15 implements the functionality to **read contacts from a CSV (Comma Separated Values) file and load them into the Address Book**.
+This use case enables the application to retrieve previously stored contact information from a CSV file and restore it into the system.
+
+The system reads the CSV file, processes each record, converts it into a contact object, and adds it to the address book.
+
+## API Endpoint
+
+**GET /contacts/read/csv**
+Reads contacts from the CSV file and loads them into the address book.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the logic to read and parse contact data from a CSV file.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint for triggering the CSV file read operation.
+
+## Status
+
+UC15 implemented successfully.
+
+
 # Address Book – UC14
 
 ## Description
