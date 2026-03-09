@@ -1,3 +1,32 @@
+# Address Book – UC13
+
+## Description
+
+UC13 implements the functionality to **read contacts from a file and load them into the Address Book**.
+This use case allows the application to retrieve previously stored contact data from a file and restore it into the system.
+
+The system reads the file line by line, converts the stored data into contact objects, and adds them to the address book.
+
+## API Endpoint
+
+**GET /contacts/read**
+Reads contacts from the file and loads them into the address book.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the logic to read contact data from a file.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint for triggering the file read operation.
+
+## Status
+
+UC13 implemented successfully.
+
+
 # Address Book – UC12
 
 ## Description
