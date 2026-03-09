@@ -155,4 +155,11 @@ public class ContactController {
 
         return contactService.writeContactsToJSON();
     }
+    
+ // UC17 : read contacts from JSON
+    @GetMapping("/read/json")
+    public String readContactsFromJSON() {
+
+        return contactService.readContactsFromJSON();
+    }
 }

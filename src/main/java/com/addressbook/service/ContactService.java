@@ -370,6 +370,28 @@ public class ContactService {
             return "Error writing contacts to JSON file";
         }
     }
+    
+ // UC17 : read contacts from JSON
+    public String readContactsFromJSON() {
+
+        String fileName = "contacts.json";
+
+        try {
+
+            ObjectMapper objectMapper = new ObjectMapper();
+
+            Contact[] loadedContacts =
+                    objectMapper.readValue(new File(fileName), Contact[].class);
+
+            contacts.addAll(Arrays.asList(loadedContacts));
+
+            return "Contacts successfully loaded from JSON file";
+
+        } catch (IOException e) {
+
+            return "Error reading contacts from JSON file";
+        }
+    }
  
     
 }
