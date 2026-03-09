@@ -278,4 +278,38 @@ public class ContactService {
         }
     }
     
+ // UC14 : write contacts to CSV file
+    public String writeContactsToCSV() {
+
+        String fileName = "contacts.csv";
+
+        try {
+
+            FileWriter writer = new FileWriter(fileName);
+
+            // header
+            writer.append("firstName,lastName,city,state\n");
+
+            for (Contact contact : contacts) {
+
+                writer.append(contact.getFirstName())
+                      .append(",")
+                      .append(contact.getLastName())
+                      .append(",")
+                      .append(contact.getCity())
+                      .append(",")
+                      .append(contact.getState())
+                      .append("\n");
+            }
+
+            writer.close();
+
+            return "Contacts successfully written to CSV file";
+
+        } catch (IOException e) {
+
+            return "Error writing contacts to CSV file";
+        }
+    }
+    
 }

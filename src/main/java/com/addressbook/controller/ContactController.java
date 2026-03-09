@@ -134,4 +134,11 @@ public class ContactController {
 
         return contactService.readContactsFromFile();
     }
+    
+ // UC14 : write contacts to CSV
+    @GetMapping("/write/csv")
+    public String writeContactsToCSV() {
+
+        return contactService.writeContactsToCSV();
+    }
 }
