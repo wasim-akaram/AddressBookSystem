@@ -1,3 +1,32 @@
+# Address Book – UC21
+
+## Description
+
+UC21 implements the functionality to **delete an existing contact from the database using JDBC**.
+This use case allows users to remove a contact record stored in the database.
+
+The system connects to the database, executes a delete query on the contacts table, and removes the corresponding record if the contact exists.
+
+## API Endpoint
+
+**DELETE /contacts/db/{firstName}**
+Deletes a contact from the database based on the provided first name.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the JDBC logic to delete contact data from the database.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint for deleting contacts from the database.
+
+## Status
+
+UC21 implemented successfully.
+
+
 # Address Book – UC20
 
 ## Description
