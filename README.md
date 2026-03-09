@@ -1,3 +1,32 @@
+# Address Book – UC22
+
+## Description
+
+UC22 implements the functionality to **add multiple contacts to the Address Book using multithreading**.
+This use case demonstrates how the system can handle concurrent operations by creating separate threads to process multiple contact additions simultaneously.
+
+The system creates multiple threads, each responsible for adding a contact, and ensures thread-safe operations while updating the contact list.
+
+## API Endpoint
+
+**POST /contacts/multi**
+Adds multiple contacts to the address book concurrently using threads.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the logic to create and manage threads for adding multiple contacts.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint for submitting multiple contacts to be processed concurrently.
+
+## Status
+
+UC22 implemented successfully.
+
+
 # Address Book – UC21
 
 ## Description
