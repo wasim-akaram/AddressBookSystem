@@ -1,3 +1,33 @@
+# Address Book – UC25
+
+## Description
+
+UC25 implements the functionality to **perform concurrent read and write operations on the Address Book**.
+This use case demonstrates how the system can safely handle multiple threads that simultaneously add new contacts while other threads read the existing contacts.
+
+The implementation ensures that shared data structures are accessed in a controlled manner so that concurrent operations do not cause data inconsistency.
+
+## API Endpoint
+
+**POST /contacts/multi/concurrent**
+Performs concurrent contact additions and read operations using multiple threads.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the logic for handling concurrent read and write operations on the contact list.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint to trigger concurrent operations.
+
+## Status
+
+UC25 implemented successfully.
+
+
+
 # Address Book – UC24
 
 ## Description
