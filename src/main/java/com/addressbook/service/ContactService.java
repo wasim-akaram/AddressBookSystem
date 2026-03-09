@@ -11,8 +11,9 @@ public class ContactService {
 
     private List<Contact> contacts = new ArrayList<>();
 
-    public void addContact(Contact contact) {
+    public String addContact(Contact contact) {
         contacts.add(contact);
+        return "Contact added successfully";
     }
 
     public List<Contact> getAllContacts() {

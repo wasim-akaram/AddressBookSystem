@@ -17,8 +17,8 @@ public class ContactController {
     @PostMapping
     public String addContact(@RequestBody Contact contact) {
 
-        contactService.addContact(contact);
-        return "Contact added successfully";
+        return contactService.addContact(contact);
+        
     }
 
     @GetMapping
