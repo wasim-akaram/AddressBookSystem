@@ -1,3 +1,32 @@
+# Address Book – UC10
+
+## Description
+
+UC10 implements the functionality to **sort contacts in the Address Book alphabetically by name**.
+This use case allows users to retrieve contacts in a sorted order based on the contact's first name.
+
+The system processes the stored contacts and returns them in ascending alphabetical order.
+
+## API Endpoint
+
+**GET /contacts/sorted/name**
+Returns the list of contacts sorted alphabetically by first name.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the logic to sort contacts.
+
+**Controller**
+
+* `ContactController` – Exposes the API endpoint for retrieving sorted contacts.
+
+## Status
+
+UC10 implemented successfully.
+
+
 # Address Book – UC9
 
 ## Description
