@@ -107,4 +107,35 @@ public class ContactService {
 
         return addressBooks.getOrDefault(bookName, new ArrayList<>());
     }
+    
+ // UC8 : search contacts by city
+    public List<Contact> searchByCity(String city) {
+
+        List<Contact> result = new ArrayList<>();
+
+        for (Contact contact : contacts) {
+
+            if (contact.getCity().equalsIgnoreCase(city)) {
+                result.add(contact);
+            }
+        }
+
+        return result;
+    }
+
+
+    // UC8 : search contacts by state
+    public List<Contact> searchByState(String state) {
+
+        List<Contact> result = new ArrayList<>();
+
+        for (Contact contact : contacts) {
+
+            if (contact.getState().equalsIgnoreCase(state)) {
+                result.add(contact);
+            }
+        }
+
+        return result;
+    }
 }

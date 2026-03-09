@@ -61,4 +61,19 @@ public class ContactController {
 
         return contactService.getContactsFromAddressBook(bookName);
     }
+    
+ // UC8 : search contacts by city
+    @GetMapping("/city/{city}")
+    public List<Contact> searchByCity(@PathVariable String city) {
+
+        return contactService.searchByCity(city);
+    }
+
+
+    // UC8 : search contacts by state
+    @GetMapping("/state/{state}")
+    public List<Contact> searchByState(@PathVariable String state) {
+
+        return contactService.searchByState(state);
+    }
 }
