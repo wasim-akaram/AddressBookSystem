@@ -8,25 +8,37 @@ import java.util.*;
 @Service
 public class ContactService {
 
-    // Existing list for UC2–UC5
+    // UC2–UC5 : store contacts
     private List<Contact> contacts = new ArrayList<>();
 
-    // New structure for UC6
+    // UC6 : multiple address books
     private Map<String, List<Contact>> addressBooks = new HashMap<>();
 
 
-    // UC2 - Add contact
+    // UC2 + UC7 : Add contact with duplicate check
     public String addContact(Contact contact) {
+
+        for (Contact existingContact : contacts) {
+
+            if (existingContact.getFirstName()
+                    .equalsIgnoreCase(contact.getFirstName())) {
+
+                return "Duplicate contact found. Contact already exists.";
+            }
+        }
+
         contacts.add(contact);
         return "Contact added successfully";
     }
 
-    // UC5 - Get all contacts
+
+    // UC5 : get all contacts
     public List<Contact> getAllContacts() {
         return contacts;
     }
 
-    // UC3 - Update contact
+
+    // UC3 : update contact
     public String updateContact(String firstName, Contact updatedContact) {
 
         for (Contact contact : contacts) {
@@ -48,7 +60,8 @@ public class ContactService {
         return "Contact not found";
     }
 
-    // UC4 - Delete contact
+
+    // UC4 : delete contact
     public String deleteContact(String firstName) {
 
         Iterator<Contact> iterator = contacts.iterator();
@@ -58,6 +71,7 @@ public class ContactService {
             Contact contact = iterator.next();
 
             if (contact.getFirstName().equalsIgnoreCase(firstName)) {
+
                 iterator.remove();
                 return "Contact deleted successfully";
             }
@@ -66,17 +80,29 @@ public class ContactService {
         return "Contact not found";
     }
 
-    // UC6 - Add contact to specific address book
+
+    // UC6 + UC7 : add contact to address book with duplicate check
     public String addContactToAddressBook(String bookName, Contact contact) {
 
-        addressBooks
-                .computeIfAbsent(bookName, k -> new ArrayList<>())
-                .add(contact);
+        List<Contact> bookContacts =
+                addressBooks.computeIfAbsent(bookName, k -> new ArrayList<>());
+
+        for (Contact existingContact : bookContacts) {
+
+            if (existingContact.getFirstName()
+                    .equalsIgnoreCase(contact.getFirstName())) {
+
+                return "Duplicate contact found in " + bookName + " address book";
+            }
+        }
+
+        bookContacts.add(contact);
 
         return "Contact added to " + bookName + " address book";
     }
 
-    // UC6 - Get contacts from address book
+
+    // UC6 : get contacts from address book
     public List<Contact> getContactsFromAddressBook(String bookName) {
 
         return addressBooks.getOrDefault(bookName, new ArrayList<>());

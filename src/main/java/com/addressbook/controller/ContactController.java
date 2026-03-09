@@ -14,19 +14,22 @@ public class ContactController {
     @Autowired
     private ContactService contactService;
 
-    // UC2 - Add contact
+
+    // UC2 : add contact
     @PostMapping
     public String addContact(@RequestBody Contact contact) {
         return contactService.addContact(contact);
     }
 
-    // UC5 - Get all contacts
+
+    // UC5 : get all contacts
     @GetMapping
     public List<Contact> getContacts() {
         return contactService.getAllContacts();
     }
 
-    // UC3 - Update contact
+
+    // UC3 : update contact
     @PutMapping("/{firstName}")
     public String updateContact(@PathVariable String firstName,
                                 @RequestBody Contact contact) {
@@ -34,14 +37,16 @@ public class ContactController {
         return contactService.updateContact(firstName, contact);
     }
 
-    // UC4 - Delete contact
+
+    // UC4 : delete contact
     @DeleteMapping("/{firstName}")
     public String deleteContact(@PathVariable String firstName) {
 
         return contactService.deleteContact(firstName);
     }
 
-    // UC6 - Add contact to specific address book
+
+    // UC6 : add contact to address book
     @PostMapping("/addressbook/{bookName}")
     public String addContactToAddressBook(@PathVariable String bookName,
                                           @RequestBody Contact contact) {
@@ -49,7 +54,8 @@ public class ContactController {
         return contactService.addContactToAddressBook(bookName, contact);
     }
 
-    // UC6 - Get contacts from specific address book
+
+    // UC6 : get contacts from address book
     @GetMapping("/addressbook/{bookName}")
     public List<Contact> getContactsFromAddressBook(@PathVariable String bookName) {
 
