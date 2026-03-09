@@ -15,7 +15,7 @@ public class ContactService {
         contacts.add(contact);
     }
 
-    public List<Contact> getContacts() {
+    public List<Contact> getAllContacts() {
         return contacts;
     }
 }

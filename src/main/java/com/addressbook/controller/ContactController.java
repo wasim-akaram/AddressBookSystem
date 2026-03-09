@@ -12,16 +12,17 @@ import java.util.List;
 public class ContactController {
 
     @Autowired
-    private ContactService service;
+    private ContactService contactService;
 
     @PostMapping
     public String addContact(@RequestBody Contact contact) {
-        service.addContact(contact);
-        return "Contact Added Successfully";
+
+        contactService.addContact(contact);
+        return "Contact added successfully";
     }
 
     @GetMapping
     public List<Contact> getContacts() {
-        return service.getContacts();
+        return contactService.getAllContacts();
     }
 }
