@@ -1,3 +1,32 @@
+# Address Book – UC24
+
+## Description
+
+UC24 implements the functionality to **ensure thread-safe operations while adding multiple contacts concurrently**.
+This use case improves the multithreading implementation by using a synchronized list to safely handle concurrent modifications to the contact collection.
+
+The system ensures that when multiple threads attempt to add contacts simultaneously, the shared data structure remains consistent and free from race conditions.
+
+## API Endpoint
+
+**POST /contacts/multi/threadsafe**
+Adds multiple contacts to the address book using thread-safe operations.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Implements thread-safe contact addition using a synchronized list.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint for submitting contacts to be processed concurrently in a thread-safe manner.
+
+## Status
+
+UC24 implemented successfully.
+
+
 # Address Book – UC23
 
 ## Description
