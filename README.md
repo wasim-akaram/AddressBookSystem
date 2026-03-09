@@ -1,3 +1,32 @@
+# Address Book – UC14
+
+## Description
+
+UC14 implements the functionality to **write Address Book contacts to a CSV (Comma Separated Values) file**.
+This use case allows the application to export contact data in a structured format that can be easily used by tools such as spreadsheets or data processing systems.
+
+The system converts the stored contact information into CSV format and writes it to a file.
+
+## API Endpoint
+
+**GET /contacts/write/csv**
+Writes all contacts from the address book into a CSV file.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the logic to convert contact data into CSV format and write it to a file.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint for triggering the CSV file write operation.
+
+## Status
+
+UC14 implemented successfully.
+
+
 # Address Book – UC13
 
 ## Description
