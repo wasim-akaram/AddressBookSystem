@@ -1,3 +1,32 @@
+# Address Book – UC16
+
+## Description
+
+UC16 implements the functionality to **write Address Book contacts to a JSON file**.
+This use case allows the application to export contact data in JSON format, which is widely used in modern web services and APIs.
+
+The system converts the stored contacts into JSON and saves them to a file.
+
+## API Endpoint
+
+**GET /contacts/write/json**
+Writes all contacts from the address book into a JSON file.
+
+## Components Involved
+
+**Service**
+
+* `ContactService` – Contains the logic to convert contact data into JSON and write it to a file.
+
+**Controller**
+
+* `ContactController` – Provides the API endpoint for triggering the JSON file write operation.
+
+## Status
+
+UC16 implemented successfully.
+
+
 # Address Book – UC15
 
 ## Description
